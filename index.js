@@ -4,6 +4,7 @@ const client = new Discord.Client({
   intents: 32767,
   ws: { properties: { $browser: "Discord iOS" } },
   restTimeOffset: 0,
+  partials: ["MESSAGE", "CHANNEL", "REACTION"],
 });
 module.exports = client;
 
@@ -18,7 +19,7 @@ client.emotes = require("./emojis.json");
 
 client.categories = require("fs").readdirSync("./commands/");
 
-["commands", "events"].forEach((file) => {
+["commands", "events", "features"].forEach((file) => {
   require(`./handlers/${file}`)(client);
 });
 
