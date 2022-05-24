@@ -21,7 +21,7 @@ module.exports = {
         content: `${client.emotes.no} You can't set slowmode to more than 6 hours.`,
       });
 
-    channel.setRateLimitPerUser(ms(args[0]));
+    channel.setRateLimitPerUser(ms(args[0]) / 1000);
 
     message.channel.send({
       content: `Set slowmode to ${ms(ms(args[0]), { long: true })}.`,
