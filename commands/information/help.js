@@ -15,7 +15,7 @@ module.exports = {
         client.commands.find(
           (cmd) => cmd.aliases && cmd.aliases.includes(args[0])
         );
-      if (!command) {
+      if (!command || command.directory === "owner") {
         return message.channel.send({
           embeds: [
             new MessageEmbed()
@@ -91,6 +91,7 @@ module.exports = {
       };
       for (let i = 0; i < client.categories.length; i += 1) {
         const current = client.categories[i];
+        if (current === "owner") continue;
         const items = commands(current);
         embed.addField(
           `${current.toUpperCase()} [${items.length}]`,

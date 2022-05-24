@@ -27,6 +27,14 @@ client.on("messageCreate", async (message) => {
       });
     }
 
+    if (
+      command.directory === "owner" &&
+      !client.config.owners.includes(message.author.id)
+    )
+      return message.channel.send({
+        content: `${client.emotes.no} You do not have permission to use this command.`,
+      });
+
     await command.run(client, message, args);
   } catch (err) {
     console.log(err);
