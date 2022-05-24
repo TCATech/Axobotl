@@ -2,7 +2,7 @@ module.exports = (client) => {
   client.on("messageReactionAdd", async (reaction, user) => {
     if (reaction.emoji.name === "🍪" && !user.bot) {
       const role = reaction.message.guild.roles.cache.find(
-        (r) => r.name.toLowerCase() === "virtual cookie consumer"
+        (r) => r.name.toLowerCase().indexOf("cookie") !== -1
       );
       const member = reaction.message.guild.members.cache.get(user.id);
       if (reaction.message.partial) {
@@ -15,7 +15,7 @@ module.exports = (client) => {
   client.on("messageReactionRemove", async (reaction, user) => {
     if (reaction.emoji.name === "🍪" && !user.bot) {
       const role = reaction.message.guild.roles.cache.find(
-        (r) => r.name.toLowerCase() === "virtual cookie consumer"
+        (r) => r.name.toLowerCase().indexOf("cookie") !== -1
       );
       const member = reaction.message.guild.members.cache.get(user.id);
       if (reaction.message.partial) {
