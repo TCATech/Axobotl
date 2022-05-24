@@ -3,6 +3,7 @@ const { Client, Message } = require("discord.js");
 module.exports = {
   name: "unmute",
   description: "Unmutes a member from the server, preventing them from typing.",
+  userPerms: ["MODERATE_MEMBERS"],
   /**
    * @param {Client} client
    * @param {Message} message

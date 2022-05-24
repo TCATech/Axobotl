@@ -3,6 +3,7 @@ const { Client, Message } = require("discord.js");
 module.exports = {
   name: "kick",
   description: "Kicks a member from the server.",
+  userPerms: ["KICK_MEMBERS"],
   /**
    * @param {Client} client
    * @param {Message} message

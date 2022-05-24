@@ -3,6 +3,7 @@ const { Client, Message } = require("discord.js");
 module.exports = {
   name: "purge",
   description: "Deletes a specific amount of messages.",
+  userPerms: ["MANAGE_MESSAGES"],
   /**
    * @param {Client} client
    * @param {Message} message

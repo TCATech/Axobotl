@@ -3,6 +3,7 @@ const { Client, Message } = require("discord.js");
 module.exports = {
   name: "nick",
   description: "Changes the nickname of a member, or yourself.",
+  userPerms: ["MANAGE_MEMBERS", "MANAGE_NICKNAMES"],
   /**
    * @param {Client} client
    * @param {Message} message

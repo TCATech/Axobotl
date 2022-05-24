@@ -15,7 +15,7 @@ client.on("messageCreate", async (message) => {
     client.commands.get(cmd.toLowerCase()) ||
     client.commands.find((c) => c.aliases?.includes(cmd.toLowerCase()));
 
-  if (!command) return message.delete();
+  if (!command) return;
 
   try {
     if (

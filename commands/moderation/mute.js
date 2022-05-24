@@ -12,6 +12,7 @@ const acceptableTimes = [
 module.exports = {
   name: "mute",
   description: "Mutes a member from the server, preventing them from typing.",
+  userPerms: ["MODERATE_MEMBERS"],
   /**
    * @param {Client} client
    * @param {Message} message
