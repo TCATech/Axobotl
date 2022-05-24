@@ -18,7 +18,6 @@ module.exports = {
     const member = message.mentions.members.first() || message.member;
     const avatar = member.user.displayAvatarURL({ dynamic: true, size: 4096 });
     const atta = new MessageAttachment(avatar, "avatar.png");
-    console.log(atta);
     message.channel.send({
       content: `${member.user.tag}'s Avatar`,
       //   embeds: [
