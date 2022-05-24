@@ -5,6 +5,14 @@ const client = new Discord.Client({
   ws: { properties: { $browser: "Discord iOS" } },
   restTimeOffset: 0,
   partials: ["MESSAGE", "CHANNEL", "REACTION"],
+  presence: {
+    activities: [
+      {
+        name: "subs.nottca.tk",
+        type: "WATCHING",
+      },
+    ],
+  },
 });
 module.exports = client;
 
